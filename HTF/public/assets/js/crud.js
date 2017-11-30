@@ -5,6 +5,15 @@ var crud = {
     //GET
     get: function (items) {
         $.get("http://37.230.98.72/htf/api/" + items);
+
+        /*$.ajax({
+            url: "http://37.230.98.72/htf/api/",
+            data: data,
+            success: success,
+            dataType: dataType
+        });
+
+        beforeSend: function(xhr) { xhr.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + password)); };*/
     },
     getTerrorists: function () {
         crud.get("terrorists");
