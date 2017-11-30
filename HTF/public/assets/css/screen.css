@@ -13,3 +13,8 @@ input, label {vertical-align:middle}
     display: none;  
 }
 
+#map{
+    width:85vw;
+    height:40vh;
+
+}
