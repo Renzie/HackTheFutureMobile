@@ -24,6 +24,16 @@ var crud = {
 $(function () {
     listTerrorists();
     listMines();
+
+    $('body').on('click', 'a.mineDetails', function(event) {
+        event.preventDefault();
+        var id = $(this).parent().parent().attr('data-role');
+
+        $('.tab').hide();
+        $('.tab#'  + $(this).attr("data-role")).fadeIn();
+
+        mineDetails(id);
+    });
 });
 
 var listTerrorists = () => {
@@ -49,7 +59,7 @@ var listMines = () =>{
                 '<td>' + value.name  + '</td>' +
                 '<td>' + value.type + '</td>' +
                 '<td>' + value.region + '</td>' +
-                ' <td><a href="" onclick="mineDetails(' + value.id + ')" data-role="mineDetails">View details</a></td>' +
+                ' <td><a href="" class="mineDetails" data-role="mineDetails">View details</a></td>' +
                 '</tr>';
             $(".minelist").append(html);
         });
@@ -60,6 +70,13 @@ var mineDetails = (id) =>{
     crud.getMineDetails(id).then((data) => {
         var obj = JSON.parse(data);
 
-        console.log(data);
+        var html = '<h1 class="text-center">' + obj.name + '</h1>' +
+            '<div class="row container-fluid"><p class="col">ID</p><p class="col">' + obj.id + '</p></div>' +
+            '<div class="row container-fluid"><p class="col">Name</p><p class="col" >' + obj.name + '</p></div> ' +
+            '<div class="row container-fluid"> <p class="col">Type</p><p class="col">' + obj.type + '</p></div> ' +
+            '<div class="row container-fluid"> <p class="col">Region</p><p class="col" >' + obj.region + '</p> </div>' +
+            '<div class="row container-fluid"><p class="col">Location</p></div>';
+
+        $('#mineDetails').html(html);
     });
 };
