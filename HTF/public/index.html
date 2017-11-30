@@ -1,78 +1,54 @@
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>MusicPlayer</title>
-	<link rel="stylesheet" href="assets/css/reset.css">
-	<link rel="stylesheet" href="assets/css/screen.css">
-	<link rel="stylesheet" href="themes/MusicPlayer.min.css" />
-	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
-	<link rel="stylesheet" href="icons/icon-pack-custom.css"/>
-	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MusicPlayer</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/screen.css">
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css"/>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"/>
+
 </head>
 <body>
-<div data-role="page" data-theme="a">
-	<header data-tap-toggle="false" data-role="header" data-theme="d" data-position="fixed">
-		<h1 id="songname" align="center">No song selected</h1>
-		<section class="ui-bar-c">
-			<h2 align="center" data-theme="c">Playlist 1</h2>
-		</section>
-
-	</header>
-
-
-	<div id="playlist" data-defaults="true" data-role="main" data-theme="c" data-position="relative">
-
-
-		<ul id="currentPlaylist" data-role="listview" data-split-icon="gear">
-			<!--<li data-role="list-divider" data-theme="c" id="playlist" data-position="fixed">Playlist 1</li>-->
-
-		</ul>
-
-		<!--<nav data-role="navbar">
-            <ul>
-                <li><a href="#" data-icon="bullets">My playlists</a> </li>
-                <li><a href="#" data-icon="search">Search</a></li>
-                <li><a href="#" data-icon="gear">Settings</a></li>
+<header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+    <nav class="navbar fixed-top navbar-light bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuz" aria-controls="navbarColor01" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">Fixed top</a>
+        <div class="navbar-collapse collapse hide" id="menu" style="">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
             </ul>
-        </nav>-->
-	</div>
+        </div>
+    </nav>
 
+</header>
+<main class="bd-content">
+    <div id="terrorists" class="">
+        <h1>Terrorists</h1>
+    <table class="list-group">
+        <li class="list-group-item active">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Morbi leo risus</li>
+        <li class="list-group-item">Porta ac consectetur ac</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+    </table>
 
-
-		<footer data-tap-toggle="false" data-role="footer" data-theme="c" data-position="fixed">
-		<section id="songsetup" data-position="fixed">
-			<!-- hier moet play / pause / skip / previous staan -->
-			<a href="#" class="step-backward ui-nodisc-icon ui-btn ui-btn-icon-notext " ></a>
-			<button class="ytp-play-button ytp-button" aria-live="assertive" tabindex="32" aria-label="Pause">
-				<svg width="70%" height="10%" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-					<defs>
-						<path id="ytp-12" d="M11,10 L18,13.74 18,22.28 11,26 M18,13.74 L26,18 26,18 18,22.28">
-							<animate class="animation" begin="indefinite" attributeType="XML" attributeName="d" fill="freeze" to="M11,10 L17,10 17,26 11,26 M20,10 L26,10 26,26 20,26" from="M11,10 L18,13.74 18,22.28 11,26 M18,13.74 L26,18 26,18 18,22.28" dur="0.1s" keySplines=".4 0 1 1"
-									 repeatCount="1"></animate>
-						</path>
-					</defs>
-					<use xlink:href="#ytp-12" class="ytp-svg-shadow"></use>
-					<use xlink:href="#ytp-12" class="ytp-svg-fill"></use>
-				</svg>
-			</button>
-
-			<a href="#" class="step-forward ui-nodisc-icon ui-btn ui-btn-icon-notext" ></a>
-		</section>
-
-		<nav data-role="navbar"  >
-			<ul>
-				<li><a href="#" data-icon="bullets">My playlists</a></li>
-				<li><a href="#" class="home" data-icon="Home">Home</a> </li>
-				<li><a href="#" data-icon="gear">Settings</a></li>
-			</ul>
-
-		</nav>
-
-	</footer>
-</div>
+    </div>
+</main>
 <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 </html>
