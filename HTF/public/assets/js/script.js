@@ -3,7 +3,6 @@ $(function () {
 });
 
 function showTab(){
-    console.log($(this).attr("data-role"));
     $('.tab').hide();
     $('.tab#'  + $(this).attr("data-role")).fadeIn();
 };
