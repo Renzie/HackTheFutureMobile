@@ -42,7 +42,7 @@ var listTerrorists = () => {
 
         obj.forEach(function (terrorist) {
             var html = '<tr><th>' + terrorist.name + '</th>' +
-                '<td><img src="http://37.230.98.72/htf' + terrorist.image + '" alt="' + terrorist.name + '"></td>' +
+                '<td><img class="terroristImage" src="http://37.230.98.72/htf' + terrorist.image + '" alt="' + terrorist.name + '"></td>' +
                 '<td>' + terrorist.riskLevel + '</td>' +
                 '<td>' + terrorist.rank + '</td></tr>';
             $(".terrorlist").append(html);
