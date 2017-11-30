@@ -44,14 +44,12 @@ var listMines = () =>{
     crud.getMines().then((data) => {
         var obj = JSON.parse(data);
 
-        console.log(data);
-        console.log(obj);
-
-        obj.forEach(function (mine) {
-            var html = '<tr><td>' + mine.name  + '</td>' +
-                '<td>' + mine.type + '</td>' +
-                '<td>' + mine.region + '</td>' +
-                '<td><a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Link with href></a></td>' +
+        obj.forEach(function (value) {
+            var html = '<tr><th data-role="mine-' + value.id + '">' + value.id + '</th>' +
+                '<td>' + value.name  + '</td>' +
+                '<td>' + value.type + '</td>' +
+                '<td>' + value.region + '</td>' +
+                ' <td><a  class="tab-link" data-role="mineDetails">View details</a></td>' +
                 '</tr>';
             $(".minelist").append(html);
         });
