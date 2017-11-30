@@ -42,11 +42,11 @@ var listTerrorists = () => {
 var listMines = () =>{
     crud.getMines().then((data) => {
         $(data).each(key, value, function () {
-            var html = '<th data-role="">' + value.id + '<tr></th>' +
+            var html = '<tr><th data-role="mine-' + value.id + '">' + value.id + '</th>' +
                 '<td>' + value.name  + '</td>' +
                 '<td>' + value.type + '</td>' +
                 '<td>' + value.region + '</td>' +
-                '<td><a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Link with href></a></td>' +
+                ' <td><a  class="tab-link" data-role="mineDetails">View details</a></td>' +
                 '</tr>';
             $(".minelist").append(html);
         })
