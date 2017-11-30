@@ -15,6 +15,10 @@ module.exports = function (app, passport) {
         //TODO
     });
 
+    app.get('/index', function (req, res) {
+        res.render('index.ejs', { message: req.flash('loginMessage') });
+    });
+
     app.post('/login', passport.authenticate('local-login', {
         failureRedirect : '/',
         failureFlash : true
