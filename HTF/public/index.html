@@ -15,18 +15,18 @@
 <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bg-dark">
     <div class="navbar-nav-scroll  nav">
         <ul class="navbar-nav bd-navbar-nav flex-row">
-            <li class="nav-item"><a href="#terrorists" class="nav-link" >Terrorists</a></li>
-            <li class="nav-item"><a href="#mines" class="nav-link">Mines</a></li>
-            <li class="nav-item"><a class="nav-link">Images</a></li>
-            <li class="nav-item"><a class="nav-link">Poll</a></li>
+            <li class="nav-item"><a href="#Terrorists" class="nav-link tab-link" >Terrorists</a></li>
+            <li class="nav-item"><a href="#Mines" class="nav-link tab-link">Mines</a></li>
+            <li class="nav-item"><a class="nav-link tab-link">Images</a></li>
+            <li class="nav-item"><a class="nav-link tab-link">Poll</a></li>
 
         </ul>
     </div>
 </header>
 
 <main class="bd-content">
-    <div id="terrorists" class="hide">
-        <h1>Terrorists</h1>
+    <div id="Terrorists" class="hide tab">
+        <h1 class="text-center">Terrorists</h1>
         <table class="table">
             <thead>
             <tr>
@@ -38,11 +38,59 @@
             </tr>
             </thead>
             <tbody class="terrorlist">
+
+            </tbody>
+        </table>
+
+    </div>
+
+    <div id="Mines" class="hide tab">
+        <h1 class="text-center">Mines</h1>
+        <table class="table">
+            <thead>
+            <tr>
+
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Type</th>
+                <th scope="col">Region</th>
+                <th>Details</th>
+
+            </tr>
+
+            </thead>
+            <tbody class="minelist">
+                <tr>
+                    <td scope="col">#</td>
+                    <td scope="col">Name</td>
+                    <td scope="col">Type</td>
+                    <td scope="col">Region</td>
+                    <td><a href="#mineDetails">View details</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+
+    <div id="Images" class="hide tab">
+        <h1 class="text-center">Images</h1>
+        <table class="table">
+            <thead>
+            <tr>
+
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Type</th>
+
+            </tr>
+            </thead>
+            <tbody class="terrorlist">
             <tr>
                 <th scope="row">1</th>
                 <td>Mark</td>
                 <td>Otto</td>
-                <td>@mdo</td>
+                <td><a>View Details</a></td>
             </tr>
             <tr>
                 <th scope="row">2</th>
@@ -60,46 +108,51 @@
         </table>
 
     </div>
-
-    <div id="mines" class="hide tab">
-        <h1>Terrorists</h1>
+    <div id="Poll" class="hide tab">
+        <h1 class="text-center">Poll</h1>
         <table class="table">
             <thead>
             <tr>
 
+                <th scope="col">#</th>
                 <th scope="col">Name</th>
-                <th scope="col">Image</th>
-                <th scope="col">RiskLevel</th>
-                <th scope="col">Rank</th>
+                <th scope="col">Type</th>
+
             </tr>
             </thead>
             <tbody class="terrorlist">
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-            </tr>
+
             </tbody>
         </table>
+
+    </div>
+
+    <div id="mineDetails" class="tab">
+        <h1 class="text-center">(Details)</h1>
+        <div class="row">
+           <!-- <p class="">test</p>-->
+        </div>
+    </div>
+
+
+    <div id="pollDetails">
+
+    </div>
+
+    <div>
+        <form>
+            <label for="voteDetails"></label>
+        <textarea id="voteDetails" class="vote">
+
+        </textarea>
+            <input type="submit" value="vote">
+        </form>
 
     </div>
 </main>
 
 <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
-
+<script type="text/javascript" src="assets/js/crud.js"></script>
 <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 </html>

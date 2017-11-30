@@ -1,14 +1,13 @@
-<<<<<<< HEAD
 
 $(function () {
-    $('body').on('click','.nav-item',showTab)
+    $('.tab-link').on('click',showTab)
 });
 
 
-var showTab = () => {
-    console.log($(this));
-    //$('.tab').hide();
-    //$('.tab.'  + $(this).val()).show();
+function showTab(){
+    console.log($(this).text());
+    $('.tab').hide();
+    $('.tab#'  + $(this).text()).fadeIn();
 };
 
 function openQRCamera(node) {
