@@ -3,52 +3,103 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MusicPlayer</title>
-    <link rel="stylesheet" href="assets/css/reset.css">
+
     <link rel="stylesheet" href="assets/css/screen.css">
 
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css"/>
+
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"/>
 
 </head>
 <body>
-<header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
-    <nav class="navbar fixed-top navbar-light bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuz" aria-controls="navbarColor01" aria-expanded="true" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#">Fixed top</a>
-        <div class="navbar-collapse collapse hide" id="menu" style="">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
 
+<header class="navbar navbar-expand navbar-dark flex-column flex-md-row bg-dark">
+    <div class="navbar-nav-scroll  nav">
+        <ul class="navbar-nav bd-navbar-nav flex-row">
+            <li class="nav-item"><a href="#terrorists" class="nav-link" >Terrorists</a></li>
+            <li class="nav-item"><a href="#mines" class="nav-link">Mines</a></li>
+            <li class="nav-item"><a class="nav-link">Images</a></li>
+            <li class="nav-item"><a class="nav-link">Poll</a></li>
+
+        </ul>
+    </div>
 </header>
+
 <main class="bd-content">
-    <div id="terrorists" class="">
+    <div id="terrorists" class="hide">
         <h1>Terrorists</h1>
-    <table class="list-group">
-        <li class="list-group-item active">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Morbi leo risus</li>
-        <li class="list-group-item">Porta ac consectetur ac</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-    </table>
+        <table class="table">
+            <thead>
+            <tr>
+
+                <th scope="col">Name</th>
+                <th scope="col">Image</th>
+                <th scope="col">RiskLevel</th>
+                <th scope="col">Rank</th>
+            </tr>
+            </thead>
+            <tbody class="terrorlist">
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div id="mines" class="hide tab">
+        <h1>Terrorists</h1>
+        <table class="table">
+            <thead>
+            <tr>
+
+                <th scope="col">Name</th>
+                <th scope="col">Image</th>
+                <th scope="col">RiskLevel</th>
+                <th scope="col">Rank</th>
+            </tr>
+            </thead>
+            <tbody class="terrorlist">
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+            </tr>
+            </tbody>
+        </table>
 
     </div>
 </main>
+
+<script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
+
 <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 </html>

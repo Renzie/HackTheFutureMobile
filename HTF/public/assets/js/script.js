@@ -1,25 +1,12 @@
-/**
- * Created by Renzie on 30/11/2017.
- */
-function openQRCamera(node) {
-    var reader = new FileReader();
-    reader.onload = function() {
-        node.value = "";
-        qrcode.callback = function(res) {
-            if(res instanceof Error) {
-                alert("No QR code found. Please make sure the QR code is within the camera's frame and try again.");
-            } else {
-                node.parentNode.previousElementSibling.value = res;
-            }
-        };
-        qrcode.decode(reader.result);
-    };
-    reader.readAsDataURL(node.files[0]);
-}
 
-function showQRIntro() {
-    return confirm("Use your camera to take a picture of a QR code.");
-}
+$(function () {
+    $('body').on('click','.nav-item',showTab)
+});
 
 
-//172.21.1.76
+var showTab = () => {
+    console.log($(this));
+    //$('.tab').hide();
+    //$('.tab.'  + $(this).val()).show();
+};
+
