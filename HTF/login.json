@@ -1,0 +1,12 @@
+{
+  "users" : {
+    "5a198a3280ae395f304cdc04": {
+          "name": "Jubilee",
+          "family": "X-Men"
+    },
+      "5a198a3280ae395f304cdc05": {
+          "name": "Kitty Pryde",
+          "family": "X-Men"
+    }
+  }
+}

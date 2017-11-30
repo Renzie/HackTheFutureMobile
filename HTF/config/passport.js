@@ -1,32 +1,52 @@
 var LocalStrategy   = require('passport-local').Strategy;
-var User            = require('../app/models/user');
+var fs = require("fs");
+var content = fs.readFileSync("login.json");
+var jsonContent = JSON.parse(content);
+var request = require('request');
 
 module.exports = function(passport) {
     passport.serializeUser(function(user, done) {
-        done(null, user.id);
+        done(null, user.code);
     });
 
-    passport.deserializeUser(function(id, done) {
-        User.findById(id, function(err, user) {
-            done(err, user);
+    passport.deserializeUser(function(code, done) {
+        authUser(code, function (user) {
+            var curuser = {
+                code: code,
+                accessToken: user.accessToken
+            };
+
+            return done(null, curuser);
         });
     });
 
     passport.use('local-login', new LocalStrategy({
-            usernameField : 'name',
-            passwordField : 'family',
-            passReqToCallback : true
+            usernameField : 'code',
+            passwordField : 'code',
+            passReqToCallback: true
         },
-        function(req, name, family, done) {
-
-            User.findOne({ 'local.name' :  name }, function(err, user) {
-                if (err)
-                    return done(err);
-
-                if (!user)
+        function(req, code, code, done) {
+            authUser(code, function (user) {
+                if(user.message !== undefined){
                     return done(null, false, req.flash('loginMessage', 'No user found.'));
+                }
 
-                return done(null, user);
+                var curuser = {
+                    code: code,
+                    accessToken: user.accessToken
+                };
+
+                return done(null, curuser);
             });
         }));
 };
+
+function authUser(qrCode, callback){
+    request.post(
+        'http://37.230.98.72/htf/api/auth/login',
+        { json: { qrCode: qrCode } },
+        function (error, response, body) {
+            callback(body);
+        }
+    );
+}

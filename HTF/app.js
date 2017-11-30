@@ -17,7 +17,6 @@ var configDB = require('./config/database.js');
 require('./config/passport')(passport);
 
 app.use(express.static(__dirname + '/public'));
-app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended:true}));
 
