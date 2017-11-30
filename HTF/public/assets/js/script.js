@@ -1,3 +1,15 @@
+
+$(function () {
+    $('.tab-link').on('click',showTab)
+});
+
+
+function showTab(){
+    console.log($(this).text());
+    $('.tab').hide();
+    $('.tab#'  + $(this).text()).fadeIn();
+};
+
 function openQRCamera(node) {
     var reader = new FileReader();
     reader.onload = function() {
