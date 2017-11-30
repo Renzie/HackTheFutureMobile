@@ -11,11 +11,7 @@ module.exports = function (app, passport) {
         res.redirect('/');
     });
 
-    app.get('/terrorists', isLoggedIn, function (req, res) {
-        //TODO
-    });
-
-    app.get('/index', function (req, res) {
+    app.get('/index', isLoggedIn, function (req, res) {
         res.render('index.ejs', { message: req.flash('loginMessage') });
     });
 
@@ -23,7 +19,7 @@ module.exports = function (app, passport) {
         failureRedirect : '/',
         failureFlash : true
     }), function (req, res) {
-        listTerrorists(req.user.accessToken);
+        res.redirect('/index');
     });
 };
 
