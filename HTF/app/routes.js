@@ -23,10 +23,16 @@ module.exports = function (app, passport) {
     });
 
     app.post('/terrorists', function (req, res) {
-        listTerrorists(req.user.accessToken, function (result) {
+        getData('terrorists' ,req.user.accessToken, function (result) {
             res.send(result);
         });
-    })
+    });
+
+    app.post('/mines', function (req, res) {
+        getData('mines' ,req.user.accessToken, function (result) {
+            res.send(result);
+        });
+    });
 };
 
 function isLoggedIn(req, res, next) {
@@ -36,8 +42,8 @@ function isLoggedIn(req, res, next) {
     res.redirect('/');
 }
 
-function listTerrorists(accessToken, callback){
-    request.get('http://37.230.98.72/htf/api/terrorists',
+function getData(dataset, accessToken, callback){
+    request.get('http://37.230.98.72/htf/api/' + dataset,
         { 'auth': {'bearer':accessToken} },
         function (error, response, body) {
             callback(body);

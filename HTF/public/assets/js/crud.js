@@ -7,10 +7,10 @@ var crud = {
         return crud.get("terrorists");
     },
     getMines: function () {
-        crud.get("mines")
+        return crud.get("mines")
     },
     getMineDetails : function (id) {
-        crud.get("mines/" + id);
+        return crud.get("mines/" + id);
     },
 
     //POST
@@ -23,6 +23,7 @@ var crud = {
 
 $(function () {
     listTerrorists();
+    listMines();
 });
 
 var listTerrorists = () => {
@@ -41,14 +42,18 @@ var listTerrorists = () => {
 
 var listMines = () =>{
     crud.getMines().then((data) => {
-        $(data).each(key, value, function () {
-            var html = '<th>' + value.id + '<tr></th>' +
-                '<td>' + value.name  + '</td>' +
-                '<td>' + value.type + '</td>' +
-                '<td>' + value.region + '</td>' +
+        var obj = JSON.parse(data);
+
+        console.log(data);
+        console.log(obj);
+
+        obj.forEach(function (mine) {
+            var html = '<tr><td>' + mine.name  + '</td>' +
+                '<td>' + mine.type + '</td>' +
+                '<td>' + mine.region + '</td>' +
                 '<td><a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Link with href></a></td>' +
                 '</tr>';
             $(".minelist").append(html);
-        })
+        });
     })
 };
