@@ -46,9 +46,10 @@ var listMines = () =>{
                 '<td>' + value.name  + '</td>' +
                 '<td>' + value.type + '</td>' +
                 '<td>' + value.region + '</td>' +
-                ' <td><a  class="tab-link" data-role="mineDetails">View details</a></td>' +
+                ' <td><a data-role="mineDetails">View details</a></td>' +
                 '</tr>';
             $(".minelist").append(html);
         })
     })
 };
+
