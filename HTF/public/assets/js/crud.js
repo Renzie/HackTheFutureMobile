@@ -1,7 +1,7 @@
 var crud = {
     //GET
     get: function (items) {
-        return $.post("/" + items);
+        return $.get("/" + items);
     },
     getTerrorists: function () {
         return crud.get("terrorists");
@@ -45,13 +45,21 @@ var listMines = () =>{
         var obj = JSON.parse(data);
 
         obj.forEach(function (value) {
-            var html = '<tr><th data-role="mine-' + value.id + '">' + value.id + '</th>' +
+            var html = '<tr data-role="' + value.id + '">' +
                 '<td>' + value.name  + '</td>' +
                 '<td>' + value.type + '</td>' +
                 '<td>' + value.region + '</td>' +
-                ' <td><a  class="tab-link" data-role="mineDetails">View details</a></td>' +
+                ' <td><a href="" onclick="mineDetails(' + value.id + ')" data-role="mineDetails">View details</a></td>' +
                 '</tr>';
             $(".minelist").append(html);
         });
     })
+};
+
+var mineDetails = (id) =>{
+    crud.getMineDetails(id).then((data) => {
+        var obj = JSON.parse(data);
+
+        console.log(data);
+    });
 };

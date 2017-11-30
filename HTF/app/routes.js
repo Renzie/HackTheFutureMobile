@@ -15,23 +15,29 @@ module.exports = function (app, passport) {
         res.render('index.ejs', { message: req.flash('loginMessage') });
     });
 
-    app.post('/login', passport.authenticate('local-login', {
-        failureRedirect : '/',
-        failureFlash : true
-    }), function (req, res) {
-        res.redirect('/index');
-    });
-
-    app.post('/terrorists', function (req, res) {
+    app.get('/terrorists', function (req, res) {
         getData('terrorists' ,req.user.accessToken, function (result) {
             res.send(result);
         });
     });
 
-    app.post('/mines', function (req, res) {
+    app.get('/mines', function (req, res) {
         getData('mines' ,req.user.accessToken, function (result) {
             res.send(result);
         });
+    });
+
+    app.get('/mines/:id', function (req, res) {
+        getData('mines/' + req.params.id ,req.user.accessToken, function (result) {
+            res.send(result);
+        });
+    });
+
+    app.post('/login', passport.authenticate('local-login', {
+        failureRedirect : '/',
+        failureFlash : true
+    }), function (req, res) {
+        res.redirect('/index');
     });
 };
 
