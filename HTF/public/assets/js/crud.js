@@ -91,7 +91,7 @@ var listImages = () =>{
 
         obj.forEach(function (value) {
             var html = '<tr><th>' + formatDate(new Date(value.date)) + '</th><th>' + checkDescription(value.description) + '</th>' +
-                '<th><img width="200" height="200" src="http://37.230.98.72/htf' + value.url + '" alt="' + value.name + '" ></th>' +
+                '<th><img class="terroristImage" src="http://37.230.98.72/htf' + value.url + '" alt="' + value.name + '" ></th>' +
                 '<th>' + value.user.name + '</th><th>' + value.user.family + '</th></tr>';
             $(".imagelist").append(html);
         });
