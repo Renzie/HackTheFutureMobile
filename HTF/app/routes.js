@@ -33,6 +33,12 @@ module.exports = function (app, passport) {
         });
     });
 
+    app.get('/images', function (req, res) {
+        getData('images/' ,req.user.accessToken, function (result) {
+            res.send(result);
+        });
+    });
+
     app.post('/login', passport.authenticate('local-login', {
         failureRedirect : '/',
         failureFlash : true
