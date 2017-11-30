@@ -31,11 +31,9 @@ var crud = {
             console.log("success!")
         })
     }
-
-
-
-
 };
+
+
 
 var listTerrorists = () => {
     crud.getTerrorists().then((data) => {
@@ -54,7 +52,7 @@ var listTerrorists = () => {
 var listMines = () =>{
     crud.getMines().then((data) => {
         $(data).each(key, value, function () {
-            var html = '<th>' + value.id + '<tr></th>' +
+            var html = '<th data-role="">' + value.id + '<tr></th>' +
                 '<td>' + value.name  + '</td>' +
                 '<td>' + value.type + '</td>' +
                 '<td>' + value.region + '</td>' +

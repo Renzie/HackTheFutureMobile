@@ -5,9 +5,9 @@ $(function () {
 
 
 function showTab(){
-    console.log($(this).text());
+    console.log($(this).attr("data-role"));
     $('.tab').hide();
-    $('.tab#'  + $(this).text()).fadeIn();
+    $('.tab#'  + $(this).attr("data-role")).fadeIn();
 };
 
 function openQRCamera(node) {
