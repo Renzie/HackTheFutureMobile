@@ -1,14 +1,13 @@
-
 $(function () {
     $('.tab-link').on('click',showTab)
 });
-
 
 function showTab(){
     console.log($(this).attr("data-role"));
     $('.tab').hide();
     $('.tab#'  + $(this).attr("data-role")).fadeIn();
 };
+
 
 function openQRCamera(node) {
     var reader = new FileReader();

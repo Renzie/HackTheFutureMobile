@@ -1,22 +1,10 @@
-/**
- * Created by Renzie on 30/11/2017.
- */
 var crud = {
     //GET
     get: function (items) {
-        $.get("http://37.230.98.72/htf/api/" + items);
-
-        /*$.ajax({
-            url: "http://37.230.98.72/htf/api/",
-            data: data,
-            success: success,
-            dataType: dataType
-        });
-
-        beforeSend: function(xhr) { xhr.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + password)); };*/
+        return $.post("/" + items);
     },
     getTerrorists: function () {
-        crud.get("terrorists");
+        return crud.get("terrorists");
     },
     getMines: function () {
         crud.get("mines")
@@ -33,19 +21,21 @@ var crud = {
     }
 };
 
-
+$(function () {
+    listTerrorists();
+});
 
 var listTerrorists = () => {
     crud.getTerrorists().then((data) => {
-        $(data).each(key, value, function () {
-            var html = '<th>' + value.id + '<tr></th>' +
-                '<td>' + value.name  + '</td>' +
-                '<td>' + value.image + '</td>' +
-                '<td>' + value.riskLevel + '</td>' +
-                '<td>' + value.rank + '</td></tr>';
+        var obj = JSON.parse(data);
+
+        obj.forEach(function (terrorist) {
+            var html = '<tr><th>' + terrorist.name + '</th>' +
+                '<td><img src="http://37.230.98.72/htf' + terrorist.image + '" alt="' + terrorist.name + '"></td>' +
+                '<td>' + terrorist.riskLevel + '</td>' +
+                '<td>' + terrorist.rank + '</td></tr>';
             $(".terrorlist").append(html);
-        })
-        
+        });
     })
 };
 
@@ -62,6 +52,3 @@ var listMines = () =>{
         })
     })
 };
-
-
-
