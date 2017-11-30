@@ -13,3 +13,19 @@ input, label {vertical-align:middle}
     display: none;  
 }
 
+#map{
+    width:85vw;
+    height:40vh;
+}
+
+.terroristImage{
+    width:200px;
+    height:200px;
+}
+
+@media screen and (max-width: 1024px){
+    .terroristImage{
+        width:20vw;
+        height:25%;
+    }
+}

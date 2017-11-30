@@ -27,3 +27,24 @@ function openQRCamera(node) {
 function showQRIntro() {
     return confirm("Use your camera to take a picture of a QR code.");
 }
+
+function initMap() {
+    var mapOptions = {
+        center: new google.maps.LatLng(51.5, -0.12),
+        zoom: 10,
+        mapTypeId: google.maps.MapTypeId.HYBRID
+    };
+    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    addMarker(42,42)
+}
+
+
+function addMarker(lat,lon) {
+    var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(lat, lon),
+        title: 'new marker',
+        draggable: true,
+        map: map
+    });
+    map.setCenter(marker.getPosition())
+}
